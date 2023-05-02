@@ -15,7 +15,7 @@ pipeline {
      stage('run') {
         steps {
             sh """
-                 
+                 sh 'cp -r ./ro-portfolio/* /deploy'
             """
             }
           }
