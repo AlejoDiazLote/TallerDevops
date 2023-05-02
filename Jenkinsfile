@@ -4,9 +4,6 @@ pipeline {
       stage('Cloning repo') {
         steps {
             git branch: 'main', url: 'https://github.com/AlejoDiazLote/TallerDevops'
-            sh """
-                docker build -t django .
-            """
             }
           }
     stage('pylint') {
