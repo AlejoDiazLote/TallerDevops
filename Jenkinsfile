@@ -9,7 +9,7 @@ pipeline {
       
       stage('pylint') {
         steps {
-           sh 'pip install pylint'
+           
            sh 'mkdir -p logs'
            sh 'pylint ./rp-portfolio > /logs/pylint-logs.txt || true'
           }
