@@ -6,12 +6,11 @@ pipeline {
             git branch: 'main', url: 'https://github.com/AlejoDiazLote/TallerDevops'
             }
           }
-    stage('pylint') {
+      
+      stage('pylint') {
         steps {
-            sh """
-               pwd
-               pylint --disable=C0111 --exit-zero rp-portfolio
-            """
+           sh 'pip install pylint'
+           sh 'pylint ./rp-portfolio > /logs/pylint-logs.txt || true'
           }
       }
      stage('run') {
