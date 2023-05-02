@@ -17,8 +17,7 @@ pipeline {
      stage('run') {
         steps {
             sh """
-                docker rm -f django
-                docker run --rm -d --name django -p 8000:8000 django  
+                 
             """
             }
           }
