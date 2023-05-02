@@ -9,9 +9,10 @@ pipeline {
       
       stage('pylint') {
         steps {
-           
-           sh 'mkdir -p logs'
-           sh 'pylint ./rp-portfolio > /logs/pylint-logs.txt || true'
+            sh """
+               pwd
+               pylint --disable=C0111 --exit-zero rp-portfolio
+             """
           }
       }
      stage('run') {
